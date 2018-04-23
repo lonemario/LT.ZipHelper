@@ -59,7 +59,6 @@ static void Main(string[] args)
     Console.WriteLine("Compressione avvenuta!");
     Console.ReadKey();
 }
-}
 ```
 
 ### Authors
