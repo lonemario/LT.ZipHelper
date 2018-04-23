@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>A cross platform library for compress files in a Zip Archive</Description>
+    <Company>LoneTech - www.mariorighi.com</Company>
+    <Authors>Mario Righi</Authors>
+    <PackageLicenseUrl>https://choosealicense.com/licenses/mit/</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/lonemario/LT.ZipHelper</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

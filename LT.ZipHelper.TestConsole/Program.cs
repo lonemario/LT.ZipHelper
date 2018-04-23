@@ -18,18 +18,18 @@ namespace LT.ZipHelper.TestConsole
             list.Add(new SourceFile
             {
                 Extension = "pdf",
-                Name = "pippo1",
+                Name = "pippo1/",
                 FileBytes = File.ReadAllBytes(@"c:\Temp\EsFattura.pdf")
             });
             list.Add(new SourceFile
             {
                 Extension = "pdf",
-                Name = "pippo2",
+                Name = "pippo2;",
                 FileBytes = File.ReadAllBytes(@"c:\Temp\EsDocumentoI.pdf")
             });
             list.Add(new SourceFile
             {
-                Extension = "pdf",
+                Extension = ".pdf",
                 Name = "pippo3",
                 FileBytes = File.ReadAllBytes(@"c:\Temp\EsCC.pdf")
             });

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace LT.ZipHelper
@@ -46,13 +47,13 @@ namespace LT.ZipHelper
                         else
                             FileName = $"{FileName}.{f.Extension}";
 
-                        //CONTROLLO CHE IL NOME DEL FILE O L'ESTENSIONE NO  CONTENGANO CARATTERI NON VALIDI
-                        Regex containsABadCharacter = new Regex("["+ Regex.Escape(new string(Path.GetInvalidPathChars())) + "]");
+                        //CONTROLLO CHE IL NOME DEL FILE O L'ESTENSIONE NO  CONTENGANO CARATTERI NON VALIDI                       
+                        Regex containsABadCharacter = new Regex("["+ Regex.Escape(new string(Path.GetInvalidFileNameChars())) + "]");
                         if (containsABadCharacter.IsMatch(FileName))
                             throw new Exception("File Name or Extension constains invalid characters");
 
                         // add the item name to the zip
-                        System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(f.Name + "." + f.Extension);
+                        System.IO.Compression.ZipArchiveEntry zipItem = zip.CreateEntry(FileName);
                         // add the item bytes to the zip entry by opening the original file and copying the bytes 
                         using (MemoryStream originalFileMemoryStream = new MemoryStream(f.FileBytes))
                         {
