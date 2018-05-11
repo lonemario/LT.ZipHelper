@@ -1,4 +1,5 @@
 ﻿using LT.ZipHelper.Data;
+using LT.ZipHelper.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,7 @@ namespace LT.ZipHelper.TestConsole
             IList<SourceFile> list = new List<SourceFile>();
             list.Add(new SourceFile {
                 Extension = "pdf",
-                Name = "pippo0",
+                Name = FileNameNormalizer.Normalize("N.CREDITO VENDITA_12/01/2018_877_VD"),
                 FileBytes = File.ReadAllBytes(@"c:\Temp\EsCC.pdf")
             });
             list.Add(new SourceFile
