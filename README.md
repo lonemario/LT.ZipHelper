@@ -16,10 +16,13 @@ System.IO.Compression (>= 4.3.0)
 ```c#
 static void Main(string[] args)
 {
+    //Normalize File Name
+    var correctFileName = FileNameNormalizer.Normalize("N.CREDITO VENDITA_12/01/2018_877_VD");
+
     IList<SourceFile> list = new List<SourceFile>();
     list.Add(new SourceFile {
         Extension = "pdf",
-        Name = "pippo0",
+        Name = correctFileName,
         FileBytes = File.ReadAllBytes(@"c:\Temp\EsCC.pdf")
     });
     list.Add(new SourceFile
